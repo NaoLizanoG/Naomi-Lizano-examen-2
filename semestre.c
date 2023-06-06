@@ -9,14 +9,18 @@
 
 int main(){
     srand(time(NULL));
-    int notas[23][3], promedio_estudiante[23];
+    int notas[23][3], promedio_estudiante[23], promedio_semestre[3];
 
     for (int i = 0; i < 23; i++)
     {
         promedio_estudiante[i]=0;
     }
+
+    for (int i = 0; i < 3; i++)
+    {
+        promedio_semestre[i]=0;
+    }
     
-printf("Las notas de los estudiantes son:");
 
 for (int i = 0; i < 23; i++)
 {
@@ -37,6 +41,16 @@ for (int i = 0; i < 23; i++)
     }
     promedio_estudiante[i]=promedio_estudiante[i]/3;
     printf("El promedio del estudiante %d es:%d\n", i+1, promedio_estudiante[i]);
+}
+
+for (int j = 0; j < 3; j++)
+{
+   for (int i = 0; i < 23; i++)
+   {
+    promedio_semestre[j]+=notas[i][j];
+   }
+   promedio_semestre[j]=promedio_semestre[j]/26;
+   printf("Promedio del semestre %d:%d\n", j+1, promedio_semestre[j]);
 }
 
 
