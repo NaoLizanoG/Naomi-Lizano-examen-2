@@ -7,6 +7,7 @@
 #include<stdlib.h>
 #include<time.h>
 
+
 int main(){
     srand(time(NULL));
     int notas[23][3], promedio_estudiante[23], promedio_semestre[3], alumno_mayor=0;
@@ -21,7 +22,7 @@ int main(){
         promedio_semestre[i]=0;
     }
     
-
+//Ingresar datos de notas
 for (int i = 0; i < 23; i++)
 {
     printf("\nEstudiante %d\n", i+1);
@@ -34,6 +35,8 @@ for (int i = 0; i < 23; i++)
     
 }
 
+
+//promedio de estudaintes
 for (int i = 0; i < 23; i++)
 {
     for (int j = 0; j < 3; j++)
@@ -41,15 +44,20 @@ for (int i = 0; i < 23; i++)
         promedio_estudiante[i]+=notas[i][j];
     }
     promedio_estudiante[i]=promedio_estudiante[i]/3;
+
+    //estudainte mayor
     if (promedio_estudiante[i]>alumno_mayor)
     {
         alumno_mayor=i;
     }
     
+    
     printf("El promedio del estudiante %d es:%d\n", i+1, promedio_estudiante[i]); 
 }
-printf("El estudiante con mayor puntaje es el numero %d",alumno_mayor+1);
+printf("El estudiante con mayor puntaje es el numero %d\n",alumno_mayor+1);
 
+
+//promedio semestre
 for (int j = 0; j < 3; j++)
 {
    for (int i = 0; i < 23; i++)
