@@ -9,7 +9,7 @@
 
 int main(){
     srand(time(NULL));
-    int notas[23][3], promedio_estudiante[23], promedio_semestre[3];
+    int notas[23][3], promedio_estudiante[23], promedio_semestre[3], alumno_mayor=0;
 
     for (int i = 0; i < 23; i++)
     {
@@ -28,7 +28,8 @@ for (int i = 0; i < 23; i++)
     for (int j = 0; j < 3; j++)
     {
         notas[i][j]=rand()%11;
-        printf("Semestre %d: %d\n",j+1, notas[i][j] );
+        printf("Semestre %d: %d\n",j+1, notas[i][j]);
+        
     }
     
 }
@@ -40,8 +41,14 @@ for (int i = 0; i < 23; i++)
         promedio_estudiante[i]+=notas[i][j];
     }
     promedio_estudiante[i]=promedio_estudiante[i]/3;
-    printf("El promedio del estudiante %d es:%d\n", i+1, promedio_estudiante[i]);
+    if (promedio_estudiante[i]>alumno_mayor)
+    {
+        alumno_mayor=i;
+    }
+    
+    printf("El promedio del estudiante %d es:%d\n", i+1, promedio_estudiante[i]); 
 }
+printf("El estudiante con mayor puntaje es el numero %d",alumno_mayor+1);
 
 for (int j = 0; j < 3; j++)
 {
