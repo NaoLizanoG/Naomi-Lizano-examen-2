@@ -1,8 +1,29 @@
+/*Cada semestre, a la materia de Programación se inscriben una cantidad constante de 23 alumnos. El semestre está dividido en 3 progresos. Utilice los conceptos de Arreglos y Funciones para escribir un programa en lenguaje C que permita realizar los siguientes cálculos:
+1- Obtener el promedio de calificaciones de cada alumno durante el semeste.
+2- La nota promedio del grupo de estudiantes para cada progreso
+3- El alumno que obtuvo el mayor promedio de calificación durante el semestre*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 
 int main(){
+    srand(time(NULL));
+    int notas[23][3];
+printf("Las notas de los estudiantes son:");
+
+for (int i = 0; i < 23; i++)
+{
+    printf("\nEstudiante %d\n", i+1);
+    for (int j = 0; j < 3; j++)
+    {
+        notas[i][j]=rand()%11;
+        printf("Semestre %d: %d\n",j+1, notas[i][j] );
+    }
+    
+}
+
+
 
     return 0;
 }
